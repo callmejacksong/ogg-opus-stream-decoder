@@ -67,8 +67,8 @@ int main(int argc, char** argv)
     char out[count*2];
     for(int i=0;i<count; i++)
     {
-        out[i] = pcm_data[i]>>8&0xFF;
-        out[i+1] = pcm_data[i]&0xFF;
+        out[2*i+1] = pcm_data[i]>>8&0xFF;
+        out[2*i+0] = pcm_data[i]&0xFF;
 
     }
 
