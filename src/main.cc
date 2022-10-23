@@ -63,14 +63,15 @@ int main(int argc, char** argv)
 
     std::cout << "count: " << count  << std::endl;
 
-    // 将int16转为小端char
-    char out[count*2];
-    for(int i=0;i<count; i++)
-    {
-        out[2*i+1] = pcm_data[i]>>8&0xFF;
-        out[2*i+0] = pcm_data[i]&0xFF;
+    // // 将int16转为小端char
+    // char out[count*2];
+    // for(int i=0;i<count; i++)
+    // {
+    //     out[2*i+1] = pcm_data[i]>>8&0xFF;
+    //     out[2*i+0] = pcm_data[i]&0xFF;
 
-    }
+    // }
+    char * out = (char*)pcm_data;
 
     std::fstream out_file(output, std::ios::out|std::ios::binary);
 
